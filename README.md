@@ -127,24 +127,31 @@ Before submitting, verify:
 
 ## Your Information
 
-**Name:** [Your Name]
-**Student ID:** [Your Student ID]
-**Design Theme:** [Describe your portfolio theme/style]
+**Name:** Faith Kasunga
+**Student ID:** 2022051220
+**Design Theme:** 
+The design theme for this portfolio follows a modern and simple developer aesthetic. 
+The colour scheme uses indigo as the primary colour to represent creativity and profesionalism. A green secondary colour is also used to highlight interactive elements like buttons and headings adding contrast to the interface.
+The website is designed with layouts initially designed for smaller screens and then enhanced for larger devices using CSS media queries. Flexbox is used to create flexible layouts such as the navigation menu and footer while CSS grid is used in the projects section to organize project cards into responsive columns.
 
 ### CSS Techniques Used
 - [ ] CSS Custom Properties
 - [ ] Flexbox
 - [ ] CSS Grid
 - [ ] Media Queries
-- [ ] Other: _______________
+- [ ] Other: CSS Transitions
 
 ### Challenges & Solutions
 [Describe any challenges you faced and how you solved them]
 
+Finding an appropriate colour palette was one of the challenges that I faced and I solved this by searching on the internet for different colour palettes. Another challenge I faced was aligning some elements but with the help of MDN docs and many other resources, I was able to have those issues fixed.
+
 ### Credits
 [List any images, fonts, or resources used with attribution]
 
----
+MDN Web Docs - Reference for CSS documentation
+LIBRIX - Library management system image
+
 
 ## Academic Integrity
 
