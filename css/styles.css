@@ -486,7 +486,7 @@ ul {
     border-radius: var(--border-radius);
     font-family: var(--font-family);
     font-size: var(--font-size-md);
-    transition: var(--transition-normal);
+    transition: var(--transition-fast);
 }
 
 .form-group input:focus,
