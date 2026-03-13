@@ -21,38 +21,38 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
    ============================================================ */
 :root {
     /* Colors - TODO: Customize your color palette */
-    --color-primary: /* Your primary color */;
-    --color-primary-dark: /* Darker shade */;
-    --color-secondary: /* Secondary color */;
-    --color-text: /* Main text color */;
-    --color-text-light: /* Lighter text */;
-    --color-background: /* Page background */;
-    --color-background-alt: /* Alternate background */;
-    --color-border: /* Border color */;
+    --color-primary:  #4F46E5;
+    --color-primary-dark: #3730A3;
+    --color-secondary: #22C55E;
+    --color-text: #1F2937;
+    --color-text-light:#ffffff;
+    --color-background: #F9FAFB;
+    --color-background-alt: #cad0e3;
+    --color-border:#D1D5DB;
 
     /* Typography - TODO: Define your font sizes */
-    --font-family: /* Your font stack */;
-    --font-size-base: /* Base size, e.g., 16px */;
-    --font-size-sm: /* Small text */;
-    --font-size-lg: /* Large text */;
-    --font-size-xl: /* Extra large */;
-    --font-size-2xl: /* Headings */;
-    --font-size-3xl: /* Large headings */;
+    --font-family: 'Poppins', sans-serif   /* Your font stack */ ;
+    --font-size-base:  16px /* Base size, e.g., 16px */;
+    --font-size-sm: 14px /* Small text */;
+    --font-size-lg: 18px /* Large text */;
+    --font-size-xl: 24px/* Extra large */;
+    --font-size-2xl: 30px/* Headings */;
+    --font-size-3xl: 38px/* Large headings */;
 
     /* Spacing - TODO: Define spacing scale */
-    --spacing-xs: /* Extra small */;
-    --spacing-sm: /* Small */;
-    --spacing-md: /* Medium */;
-    --spacing-lg: /* Large */;
-    --spacing-xl: /* Extra large */;
+    --spacing-xs: 4px /* Extra small */;
+    --spacing-sm: 8px/* Small */;
+    --spacing-md: 14px/* Medium */;
+    --spacing-lg: 22px/* Large */;
+    --spacing-xl: 38px/* Extra large */;
 
     /* Layout */
-    --max-width: /* Container max-width */;
-    --border-radius: /* Default border radius */;
+    --max-width: 1200px/* Container max-width */;
+    --border-radius: 8px/* Default border radius */;
 
     /* Transitions */
-    --transition-fast: /* Fast transition */;
-    --transition-normal: /* Normal transition */;
+    --transition-fast: 0.1s ease-in-out/* Fast transition */;
+    --transition-normal: 0.3s ease-in-out/* Normal transition */;
 }
 
 /* ============================================================
@@ -63,30 +63,48 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
 *::before,
 *::after {
     /* TODO: box-sizing, margin, padding reset */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 html {
     /* TODO: scroll-behavior, font-size */
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
 }
 
 body {
     /* TODO: font-family, color, background-color, line-height */
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
 }
 
 img {
     /* TODO: Make images responsive */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 a {
     /* TODO: Link styles */
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 a:hover {
     /* TODO: Link hover state */
+    color: var(--color-primary-dark);
 }
 
 ul {
     /* TODO: List reset */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================================
@@ -100,6 +118,11 @@ ul {
      * - margin: 0 auto
      * - padding
      */
+     width: 100%;
+     max-width: var(--max-width);
+     margin: 0 auto;
+     padding: var(--spacing-lg);
+     
 }
 
 /* ============================================================
@@ -114,26 +137,48 @@ ul {
      * - text-align, cursor
      * - transition
      */
+     display: inline-block;
+     padding: var(--spacing-sm) var(--spacing-sm);
+     border: 2px solid var(--color-primary);
+     border-radius: var(--border-radius);
+     font-size: var(--font-size-lg);
+     font-weight: 600;
+     text-align: center;
+     cursor: pointer;
+     transition: var(--transition-normal);
 }
 
 .btn--primary {
     /* TODO: Primary button (filled) */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
 }
 
 .btn--primary:hover {
     /* TODO: Primary button hover */
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+
 }
 
 .btn--outline {
     /* TODO: Outline button (bordered) */
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
 }
 
 .btn--outline:hover {
     /* TODO: Outline button hover */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
 }
 
 .btn--small {
     /* TODO: Small button variant */
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+
+
 }
 
 /* ============================================================
@@ -147,6 +192,13 @@ ul {
 .header {
     /* TODO: Style the header
        Consider: position, background, padding, box-shadow, z-index */
+       position: sticky;
+       top: 0;
+       background: var(--color-background-alt);
+       padding: var(--spacing-md);
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 1000;
+
 }
 
 .nav {
@@ -155,24 +207,36 @@ ul {
      * - justify-content: space-between
      * - align-items: center
      */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
 }
 
 .nav__logo a {
     /* TODO: Logo styles */
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
 }
 
 .nav__menu {
     /* TODO: Style navigation menu
        Mobile: Stack vertically or hide
        Desktop: Horizontal with Flexbox */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);     
 }
 
 .nav__menu a {
     /* TODO: Navigation link styles */
+    font-size: var(--font-size-lg);
 }
 
 .nav__menu a:hover {
     /* TODO: Navigation link hover */
+    color: var(--color-primary-dark);
 }
 
 /* ============================================================
@@ -183,14 +247,29 @@ ul {
     /* TODO: Style hero section
        Consider: min-height, background, centering content
        Use Flexbox for centering */
+       min-height: 100vh;
+       background: var(--color-background-alt);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       padding: var(--spacing-lg);
 }
 
 .hero__content h1 {
     /* TODO: Style your name */
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__tagline {
     /* TODO: Style tagline */
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-secondary);
 }
 
 /* ============================================================
@@ -199,37 +278,72 @@ ul {
    ============================================================ */
 .about {
     /* TODO: Section padding */
+    padding: var(--spacing-lg);
 }
 
 .about h2 {
     /* TODO: Section heading */
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-secondary);
+    text-align: center;
 }
 
 .about__content {
     /* TODO: Use CSS Grid or Flexbox for layout
        Mobile: Stack image above text
        Desktop: Side by side */
+       display: flex;
+       flex-direction: column;
+       gap: var(--spacing-xl);
+      
+       
 }
+
+
 
 .about__image img {
     /* TODO: Style profile image */
+
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /*flex: 0 0 auto;
+    width: 100%;
+    min-width: 200px;
+    border-radius: 50%;
+    margin: 0 auto;*/
 }
 
 .about__text p {
     /* TODO: Paragraph styles */
+    font-size: var(--font-size-md);
 }
 
 .about__text h3 {
     /* TODO: Subheading styles */
+    font-size: var(--font-size-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .skills-list {
     /* TODO: Style skills list
        Consider: Flexbox, tags/badges style */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    
 }
 
 .skills-list li {
     /* TODO: Individual skill badge */
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    height: 40px;
 }
 
 /* ============================================================
@@ -238,10 +352,17 @@ ul {
    ============================================================ */
 .projects {
     /* TODO: Section styling */
+    padding: var(--spacing-lg);
+    background-color: var(--color-background-alt);
+     
 }
 
 .projects h2 {
     /* TODO: Section heading */
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-secondary);
+    text-align: center;
 }
 
 .projects__grid {
@@ -249,6 +370,13 @@ ul {
        Mobile: 1 column
        Tablet: 2 columns
        Desktop: 3 columns */
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: var(--spacing-lg);
+       max-width: 1200px;
+       margin: 0 auto;
+
+
 }
 
 .project-card {
@@ -256,30 +384,53 @@ ul {
      * - background, border-radius, overflow
      * - box-shadow, transition
      */
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-normal);
 }
 
 .project-card:hover {
     /* TODO: Card hover effect */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
     /* TODO: Project image */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
 }
 
 .project-card__content {
     /* TODO: Card content area */
+    padding: var(--spacing-md);
+
 }
 
 .project-card__content h3 {
     /* TODO: Project title */
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
 }
 
 .project-card__content p {
     /* TODO: Project description */
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
 }
 
 .project-card__links {
     /* TODO: Links container (Flexbox) */
+    display: flex;
+    margin-top: var(--spacing-md);
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
 /* ============================================================
@@ -288,23 +439,37 @@ ul {
    ============================================================ */
 .contact {
     /* TODO: Section styling */
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-background);
 }
 
 .contact h2 {
     /* TODO: Section heading */
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-secondary);
+    text-align: center;
 }
 
 .contact__form {
     /* TODO: Style contact form
        Consider: max-width, centering */
+       max-width: 600px;
+       margin: 0 auto;
 }
 
 .form-group {
     /* TODO: Form group spacing */
+    margin-bottom: var(--spacing-lg);
 }
 
 .form-group label {
     /* TODO: Label styles */
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    font-weight: 600;
 }
 
 .form-group input,
@@ -315,15 +480,28 @@ ul {
      * - font-family, font-size
      * - transition
      */
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    transition: var(--transition-normal);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     /* TODO: Focus state */
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 3px var(--color-primary);
 }
 
 .form-group textarea {
     /* TODO: Textarea specific styles */
+    min-height: 120px;
+    resize: vertical;
+
 }
 
 /* ============================================================
@@ -335,22 +513,42 @@ ul {
      * - background, color, padding
      * - text-align
      */
+    background-color: var(--color-background-alt);
+    color: var(--color-text);
+    padding: var(--spacing-lg);
+    text-align: center;
 }
 
 .footer .container {
     /* TODO: Footer layout (Flexbox) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .footer__social {
     /* TODO: Social links container */
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
 }
 
 .footer__social a {
     /* TODO: Social link styles */
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+    transition: var(--transition-normal);
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+
 }
 
 .footer__social a:hover {
     /* TODO: Social link hover */
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary);
+    
 }
 
 /* ============================================================
@@ -367,6 +565,28 @@ ul {
        - Adjust typography sizes
        - Change layouts (Grid columns, Flexbox directions)
        - Adjust spacing */
+        .nav__menu {
+            flex-direction: row;
+            gap: var(--spacing-lg);
+        }
+
+        .about__content {
+            flex-direction: row;
+            gap: var(--spacing-xl);
+        }
+
+       .about__image {
+            flex: 0 0 300px;
+
+       }
+
+       .projects__grid {
+            grid-template-columns: repeat(2, 1fr);
+       }
+
+       .hero__content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+       }
 }
 
 /* Desktop (1024px and up) */
@@ -375,11 +595,35 @@ ul {
        - Further layout adjustments
        - Larger typography
        - More spacing */
+       .hero__content h1 {
+            font-size: var(--font-size-3xl);
+       }
+
+       .hero__tagline{
+            font-size: var(--font-size-xl); 
+       }
+
+       .about h2, .projects h2, .contact h2 {
+            font-size: var(--font-size-2xl);
+       }
+
+       .projects__grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+       }
+
 }
 
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
     /* TODO: Add large desktop styles (optional) */
+    .container {
+        padding: var(--spacing-xl);
+    }
+
+    .about__content {
+        gap: var(--spacing-2xl);
+    }
 }
 
 /* ============================================================
